@@ -1,0 +1,16 @@
+add_compile_options(-fsanitize=address)
+add_link_options(-fsanitize=address)
+
+add_executable(function_modern_pointer function_modern_pointer.cpp)
+add_executable(function_legacy_pointer function_legacy_pointer.cpp)
+
+add_executable(function_modern_pointer_deleter function_modern_pointer_deleter.cpp)
+target_link_libraries(function_modern_pointer_deleter ROOT::RIO)
+add_executable(function_legacy_pointer_deleter function_modern_pointer_deleter.cpp)
+target_link_libraries(function_legacy_pointer_deleter ROOT::RIO)
+
+add_executable(class_modern_pointer class_modern_pointer.cpp)
+add_executable(class_legacy_pointer class_legacy_pointer.cpp)
+
+add_executable(legacy_pointer_ownership legacy_pointer_ownership.cpp)
+add_executable(modern_pointer_ownership modern_pointer_ownership.cpp)

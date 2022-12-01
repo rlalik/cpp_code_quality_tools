@@ -1,0 +1,11 @@
+MAKEFILE ?= Makefile
+
+USES_OPT ?= no
+BUILD_DIR := build_ubsan
+
+CXXFLAGS := -fsanitize=undefined
+LDFLAGS := -fsanitize=undefined
+
+include $(MAKEFILE)
+
+default: build install

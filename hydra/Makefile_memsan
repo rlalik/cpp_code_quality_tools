@@ -1,0 +1,15 @@
+MAKEFILE ?= Makefile
+
+USES_OPT ?= no
+BUILD_DIR := build_memsan
+
+CXXFLAGS += -fsanitize=memory
+LDFLAGS += -fsanitize=memory
+
+include $(MAKEFILE)
+
+CC = clang
+CXX = clang++
+LD = clang++
+
+default: build install

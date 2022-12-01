@@ -1,0 +1,11 @@
+MAKEFILE ?= Makefile
+
+#USES_OPT ?= no
+BUILD_DIR := build_leaksan
+
+CXXFLAGS := -fsanitize=leak
+LDFLAGS := -fsanitize=leak
+
+include $(MAKEFILE)
+
+default: build install

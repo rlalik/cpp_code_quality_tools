@@ -1,0 +1,11 @@
+MAKEFILE ?= Makefile
+
+USES_OPT ?= no
+BUILD_DIR := build_addrsan
+
+CXFLAGS := -fsanitize=address
+LDFLAGS := -fsanitize=address
+
+include $(MAKEFILE)
+
+default: build install
